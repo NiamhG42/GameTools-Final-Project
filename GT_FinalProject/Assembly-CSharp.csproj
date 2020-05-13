@@ -62,7 +62,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\BallSpawn.cs" />
     <Compile Include="Assets\Fractal\Fractal.cs" />
     <Compile Include="Assets\Scripts\BuildingProfile.cs" />
     <Compile Include="Assets\Scripts\CityManager.cs" />
@@ -71,6 +70,7 @@
     <Compile Include="Assets\Scripts\ExampleScriptableObject.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\LookAtTarget.cs" />
+    <Compile Include="Assets\Scripts\PerlinNoiseMaker.cs" />
     <Compile Include="Assets\Scripts\RecursiveTowerBlock.cs" />
     <Compile Include="Assets\Scripts\SimpleCameraFollow.cs" />
     <Compile Include="Assets\Scripts\SimpleController.cs" />
@@ -78,6 +78,7 @@
     <Compile Include="Assets\Scripts\SpaceGrid.cs" />
     <Compile Include="Assets\Scripts\Spawn.cs" />
     <Compile Include="Assets\Scripts\StaticTest.cs" />
+    <Compile Include="Assets\Scripts\TerrainBehaviour.cs" />
     <Compile Include="Assets\Scripts\TreeTowerBlock.cs" />
     <None Include="Assets\Shaders\SpaceGridPoints.shader" />
     <None Include="Assets\Shaders\GradientSkybox.shader" />
@@ -85,31 +86,34 @@
     <None Include="Assets\Scripts\EarlierStage\RecursiveTowerBlock.txt" />
     <None Include="Assets\Shaders\WallShield.shader" />
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>C:/Users/niamh/OneDrive/Documents/GAMETOOLS_FINALPROJECT/GT_FinalProject/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>C:/Users/niamh/OneDrive/Desktop/Game Tools-Final Project/GT_FinalProject/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>C:/Users/niamh/OneDrive/Documents/GAMETOOLS_FINALPROJECT/GT_FinalProject/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>C:/Users/niamh/OneDrive/Desktop/Game Tools-Final Project/GT_FinalProject/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/niamh/OneDrive/Documents/GAMETOOLS_FINALPROJECT/GT_FinalProject/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/niamh/OneDrive/Desktop/Game Tools-Final Project/GT_FinalProject/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:/Users/niamh/OneDrive/Documents/GAMETOOLS_FINALPROJECT/GT_FinalProject/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>C:/Users/niamh/OneDrive/Desktop/Game Tools-Final Project/GT_FinalProject/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>C:/Users/niamh/OneDrive/Documents/GAMETOOLS_FINALPROJECT/GT_FinalProject/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>C:/Users/niamh/OneDrive/Desktop/Game Tools-Final Project/GT_FinalProject/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/niamh/OneDrive/Documents/GAMETOOLS_FINALPROJECT/GT_FinalProject/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/niamh/OneDrive/Desktop/Game Tools-Final Project/GT_FinalProject/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>C:/Users/niamh/OneDrive/Documents/GAMETOOLS_FINALPROJECT/GT_FinalProject/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>C:/Users/niamh/OneDrive/Desktop/Game Tools-Final Project/GT_FinalProject/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>C:/Users/niamh/OneDrive/Desktop/Game Tools-Final Project/GT_FinalProject/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/niamh/OneDrive/Documents/GAMETOOLS_FINALPROJECT/GT_FinalProject/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/niamh/OneDrive/Desktop/Game Tools-Final Project/GT_FinalProject/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>C:/Users/niamh/OneDrive/Documents/GAMETOOLS_FINALPROJECT/GT_FinalProject/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>C:/Users/niamh/OneDrive/Desktop/Game Tools-Final Project/GT_FinalProject/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.0f6/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

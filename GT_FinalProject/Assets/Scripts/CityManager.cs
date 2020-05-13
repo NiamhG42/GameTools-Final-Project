@@ -20,9 +20,12 @@ namespace GRIDCITY
         public BuildingProfile wallProfile;
 
         private int citySize = 30;
+        private int terrainSize = 42;
 
         private bool[,,] cityArray = new bool [30,30,30];   //increased array size to allow for larger city volume
         private bool[,,] cityBuildingArray = new bool[30, 30, 30];
+
+        public GameObject[] terrainObjects;
 
         public static CityManager Instance
         {
@@ -59,9 +62,9 @@ namespace GRIDCITY
 		void Start ()
         {
             SetPathSlots();
+            MakeOuterTerrain();
 
 
-            
         //Make "roads" to divide the city up in a grid
             for (int x = 0; x < citySize; x++) {
                 for (int z = 5; z < citySize; z += 5)
@@ -291,6 +294,45 @@ namespace GRIDCITY
             SetSlot(xPathOffSet + 17, 0, zPathOffSet + 9, true);
             SetSlot(xPathOffSet + 17, 0, zPathOffSet + 10, true);
             SetSlot(xPathOffSet + 17, 0, zPathOffSet + 11, true);
+        }
+
+        void MakeOuterTerrain()
+        {
+            float xPosition, yPosition, zPosition;
+            int terrainObjectIndex;
+            int terrainObjectsAmount = 30;
+
+            for (int i = 0; i < terrainObjectsAmount; i++)
+            {
+                //Randomise X & Z positions
+                xPosition = Random.Range(-terrainSize, terrainSize);
+                yPosition = 2;
+                zPosition = Random.Range(-terrainSize, terrainSize);
+
+                //Randomise which terrain object spawns
+                terrainObjectIndex = Random.Range(0, terrainObjects.Length);
+
+                //Spawn terrain if its position is outside the city
+                if (!(xPosition > -15 && xPosition < 22
+                    && xPosition >-15 && zPosition <22))
+                {
+                    Instantiate(terrainObjects[terrainObjectIndex], new Vector3(xPosition, yPosition, zPosition), Quaternion.identity);
+                }
+
+                else
+                {
+                    //Get new position and spawn there if original pos is in the city
+                    xPosition = Random.Range(-terrainSize, terrainSize);
+                    zPosition = Random.Range(-terrainSize, terrainSize);
+
+                    if (!(xPosition > -15 && xPosition < 22
+                    && xPosition > -15 && zPosition < 22))
+                    {                   
+                        Instantiate(terrainObjects[terrainObjectIndex], new Vector3(xPosition, yPosition, zPosition), Quaternion.identity);
+                    }
+                }
+               
+            }
         }
 
         #endregion

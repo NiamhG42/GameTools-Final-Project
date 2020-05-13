@@ -30,18 +30,15 @@ MonoBehaviour:
   - {fileID: 746850768763028875, guid: 2ee8f6fb1637c3441a6f07bdb251ebcf, type: 3}
   groundMaterials:
   - {fileID: 2100000, guid: b0f6550616fa2fc488ef897ccfd32bd0, type: 2}
-  - {fileID: 2100000, guid: 9dbedcf2a90f2534da39b8da4e3b61a9, type: 2}
-  - {fileID: 2100000, guid: bbc0104903e30a54f9a103666792498e, type: 2}
+  - {fileID: 2100000, guid: 86cd637b42442864abbfe88da346beb3, type: 2}
+  - {fileID: 2100000, guid: e3319fa25aeabc14b87bb46d0767910c, type: 2}
   mainMaterials:
-  - {fileID: 2100000, guid: b0f6550616fa2fc488ef897ccfd32bd0, type: 2}
-  - {fileID: 2100000, guid: a4447cc3ec4ee5b4995ef78dde43318d, type: 2}
-  - {fileID: 2100000, guid: 9dbedcf2a90f2534da39b8da4e3b61a9, type: 2}
+  - {fileID: 2100000, guid: 30a119decf9aee94297a8cad82ffa4f7, type: 2}
+  - {fileID: 2100000, guid: 86cd637b42442864abbfe88da346beb3, type: 2}
+  - {fileID: 2100000, guid: 7873755b0eb77d3478b330740acef6f7, type: 2}
   - {fileID: 2100000, guid: e3319fa25aeabc14b87bb46d0767910c, type: 2}
   roofMaterials:
-  - {fileID: 2100000, guid: 6390beb8542519a428ab51037d73c11b, type: 2}
-  - {fileID: 2100000, guid: a4447cc3ec4ee5b4995ef78dde43318d, type: 2}
-  - {fileID: 2100000, guid: 30a119decf9aee94297a8cad82ffa4f7, type: 2}
-  - {fileID: 2100000, guid: 3e0189fb2b960094c87a30631420e8af, type: 2}
   - {fileID: 2100000, guid: b0f6550616fa2fc488ef897ccfd32bd0, type: 2}
-  - {fileID: 2100000, guid: e3319fa25aeabc14b87bb46d0767910c, type: 2}
-  maxHeight: 4
+  - {fileID: 2100000, guid: 86cd637b42442864abbfe88da346beb3, type: 2}
+  - {fileID: 2100000, guid: 30a119decf9aee94297a8cad82ffa4f7, type: 2}
+  maxHeight: 5

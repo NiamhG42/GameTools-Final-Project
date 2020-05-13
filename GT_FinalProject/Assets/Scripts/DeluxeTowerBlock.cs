@@ -141,7 +141,6 @@ namespace GRIDCITY
                 if ( x!=0 && y != 1 && z != 0)
                 {
                     myRenderer.enabled = false;
-                    Debug.Log("is surrounded");
                 }
             }
         }

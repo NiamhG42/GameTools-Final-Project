@@ -83,9 +83,9 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _ColorB: {r: 0.08383918, g: 0, b: 0.254717, a: 1}
+    - _ColorB: {r: 0.68708265, g: 0.5377358, b: 1, a: 1}
     - _ColorM: {r: 0.32197633, g: 0.16470587, b: 1, a: 1}
-    - _ColorT: {r: 1, g: 0.6659591, b: 0, a: 1}
+    - _ColorT: {r: 0.039473783, g: 0, b: 0.24528301, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SunColor: {r: 1, g: 0.9882353, b: 0.87058824, a: 1}
     - _SunVector: {r: 1, g: 0, b: 0, a: 0}
