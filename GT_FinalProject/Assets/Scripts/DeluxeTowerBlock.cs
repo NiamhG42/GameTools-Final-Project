@@ -63,7 +63,7 @@ namespace GRIDCITY
             Transform child;
             if (recursionLevel == 0)
             {
-                if (!cityManager.CheckSlot(x, y, z))
+                if (!cityManager.CheckSlot(x, y, z) && !cityManager.CheckRoadSlot(x, y, z))
                 {
                     int meshNum = myProfile.groundBlocks.Length;
                     int matNum = myProfile.groundMaterials.Length;

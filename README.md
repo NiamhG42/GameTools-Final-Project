@@ -1,13 +1,15 @@
 # GameTools-Final-Project
 Final Project (and supporting documentation) for Game Tools 2020
 
-##Log
+Log
 
 *Made the city bigger (more buildings)
 
 *Created "racetrack" path through city
 
 *Divided the city up with roads
+
+*Made the racetrack more visually distinct from normal roads
 
 *Randomised the building heights
 

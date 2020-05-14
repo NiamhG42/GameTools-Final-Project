@@ -72,6 +72,7 @@
     <Compile Include="Assets\Scripts\LookAtTarget.cs" />
     <Compile Include="Assets\Scripts\PerlinNoiseMaker.cs" />
     <Compile Include="Assets\Scripts\RecursiveTowerBlock.cs" />
+    <Compile Include="Assets\Scripts\RoadTileScript.cs" />
     <Compile Include="Assets\Scripts\SimpleCameraFollow.cs" />
     <Compile Include="Assets\Scripts\SimpleController.cs" />
     <Compile Include="Assets\Scripts\SimplePhysicsController.cs" />
