@@ -17,8 +17,7 @@ Final Project (and supporting documentation) for Game Tools 2020
 
 * If a block is surrounded, its mesh doesn't render
 
-* Designed and added new materials
-/ New Materials:
+* Designed and added new materials:
 - Wood (Yellow, White, Green)
 - Basic Tile (Yellow, White, Green)
 - "Daisy" themed tiles
