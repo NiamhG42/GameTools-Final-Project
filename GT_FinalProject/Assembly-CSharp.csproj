@@ -109,6 +109,9 @@
     <Reference Include="Unity.2D.Sprite.Editor">
       <HintPath>C:/Users/niamh/OneDrive/Desktop/Game Tools-Final Project/GT_FinalProject/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.2D.Tilemap.Editor">
+      <HintPath>C:/Users/niamh/OneDrive/Desktop/Game Tools-Final Project/GT_FinalProject/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>C:/Users/niamh/OneDrive/Desktop/Game Tools-Final Project/GT_FinalProject/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>

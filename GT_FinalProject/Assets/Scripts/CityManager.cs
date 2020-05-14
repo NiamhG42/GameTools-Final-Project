@@ -300,7 +300,7 @@ namespace GRIDCITY
         {
             float xPosition, yPosition, zPosition;
             int terrainObjectIndex;
-            int terrainObjectsAmount = 30;
+            int terrainObjectsAmount = 50;
 
             for (int i = 0; i < terrainObjectsAmount; i++)
             {
