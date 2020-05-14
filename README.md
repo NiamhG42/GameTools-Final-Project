@@ -15,9 +15,17 @@ Log
 
 *Building blocks now check to see if they're completely surrounded
 
-*If a block is surrounded, it's mesh doesn't render
+*If a block is surrounded, its mesh doesn't render
 
-*Added new materials (3 themes, Sunflower/Daisy/Poppy)
+*Designed and added new materials
+New Materials:
+- Wood (Yellow, White, Green)
+- Basic Tile (Yellow, White, Green)
+- "Daisy" themed tiles
+- "Sunflower" themed tiles
+- "Poppy" themed tiles
+- Racetrack tile
+- Glass
 
 *Created perlin noise texture for land outside city
 

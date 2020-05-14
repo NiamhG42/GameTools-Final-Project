@@ -29398,10 +29398,9 @@ MonoBehaviour:
   treePrefab: {fileID: 629187099214970120, guid: c7da5fde8d20b3947a523bd12a2a20ee,
     type: 3}
   profileArray:
-  - {fileID: 11400000, guid: 7b8b536d14fb73849ba149cf501eb5a5, type: 2}
-  - {fileID: 11400000, guid: b8d81ba7714ceb64fa7cef57686482cb, type: 2}
   - {fileID: 11400000, guid: 5ce0d0ec0b203eb4e95bae3454b91752, type: 2}
   - {fileID: 11400000, guid: 1e18ceacb4be56d448888cc6442b9209, type: 2}
+  - {fileID: 11400000, guid: 7b8b536d14fb73849ba149cf501eb5a5, type: 2}
   wallProfile: {fileID: 11400000, guid: 87ae1c9e30494de4286d03d35e33cdac, type: 2}
   terrainObjects:
   - {fileID: 889218450646251711, guid: da4bc360ae388d04caf5eadd8c3058cd, type: 3}

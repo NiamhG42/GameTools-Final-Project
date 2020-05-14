@@ -29,11 +29,14 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 5c6d8066217681247867f182f6807d0e, type: 2}
   - {fileID: 2100000, guid: 3e0189fb2b960094c87a30631420e8af, type: 2}
   - {fileID: 2100000, guid: a3662ba3476204b4d850eb6c1237492b, type: 2}
+  - {fileID: 2100000, guid: f4d0aafc6522ccf41ba10114ef7fb06f, type: 2}
   mainMaterials:
   - {fileID: 2100000, guid: 3e0189fb2b960094c87a30631420e8af, type: 2}
   - {fileID: 2100000, guid: a3662ba3476204b4d850eb6c1237492b, type: 2}
+  - {fileID: 2100000, guid: f4d0aafc6522ccf41ba10114ef7fb06f, type: 2}
+  - {fileID: 2100000, guid: 5c6d8066217681247867f182f6807d0e, type: 2}
   roofMaterials:
   - {fileID: 2100000, guid: 3e0189fb2b960094c87a30631420e8af, type: 2}
   - {fileID: 2100000, guid: 5c6d8066217681247867f182f6807d0e, type: 2}
   - {fileID: 2100000, guid: a3662ba3476204b4d850eb6c1237492b, type: 2}
-  maxHeight: 5
+  maxHeight: 6
