@@ -37,3 +37,7 @@ Final Project (and supporting documentation) for Game Tools 2020
 * Made 2D Tilemap Mountains around edge of scene
 
 * Modelled a glass dome to go around the city
+
+*Changed car controls
+
+*Changed how camera works
