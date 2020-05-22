@@ -41,8 +41,8 @@ InputManager:
     m_Name: Elevate
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: f
-    positiveButton: r
+    negativeButton: r
+    positiveButton: f
     altNegativeButton: 
     altPositiveButton: 
     gravity: 3

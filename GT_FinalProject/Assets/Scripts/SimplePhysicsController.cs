@@ -33,20 +33,25 @@ public class SimplePhysicsController : MonoBehaviour
     {
         if (rb!=null)
         {
+            
             //forward and backward movement
-            rb.MovePosition(transform.position + transform.forward * vInput * Time.fixedDeltaTime);
+            rb.AddForce(transform.forward * vInput);
 
-            //yaw (left/right heading control)
+           //yaw (left/right heading control)
             Quaternion yawRot = Quaternion.AngleAxis(hInput * Time.fixedDeltaTime,Vector3.up);
             rb.MoveRotation(rb.rotation*yawRot);
 
             //elevation (move up/down control)
-            transform.Translate(-Vector3.up* Time.deltaTime * eInput);
+           rb.AddForce(transform.up * eInput);
             
+            //Go faster if space is held down
+            if (Input.GetKey("space")){    
+                speed = 8.0f;
+            }
+            else {speed = 5.0f; }
 
 
 
-            
             //the code below stabilises the vehicle roll after a collision or a side turn when pitching, but only when player lets go of controls
             // if ((vInput==0f)&&(hInput == 0f)&&(eInput == 0f))
             // {
@@ -56,7 +61,7 @@ public class SimplePhysicsController : MonoBehaviour
                 //we only test the y component of the "right" vector:
                 float y = currentRight.y;
                 //Uncomment the line and watch the console to convince yourself that when y is 0 then we don't need to correct rotation
-                Debug.Log(y.ToString());
+                //Debug.Log(y.ToString());
 
                 //we create a Quaternion corresponding to a small rotation along the vehicle's "forward" axis:
                 Quaternion rollRot = Quaternion.AngleAxis(- y * rollResetSpeed * Time.fixedDeltaTime, Vector3.forward);

@@ -38,6 +38,8 @@ Final Project (and supporting documentation) for Game Tools 2020
 
 * Modelled a glass dome to go around the city
 
-*Changed car controls
+* Changed car controls (Now Add Force)
 
-*Changed how camera works
+* Changed how camera works
+
+* Fixed issue where the player "car" clips through objects
