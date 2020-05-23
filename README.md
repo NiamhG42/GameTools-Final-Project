@@ -43,3 +43,5 @@ Final Project (and supporting documentation) for Game Tools 2020
 * Changed how camera works
 
 * Fixed issue where the player "car" clips through objects
+
+* Made a simple menu screen and a screen to explain the game's controls

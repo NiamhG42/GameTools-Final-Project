@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\ExampleScriptableObject.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\LookAtTarget.cs" />
+    <Compile Include="Assets\Scripts\MenuControllerScript.cs" />
     <Compile Include="Assets\Scripts\PerlinNoiseMaker.cs" />
     <Compile Include="Assets\Scripts\RecursiveTowerBlock.cs" />
     <Compile Include="Assets\Scripts\RoadTileScript.cs" />
