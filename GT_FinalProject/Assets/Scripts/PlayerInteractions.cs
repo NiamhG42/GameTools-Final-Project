@@ -23,6 +23,13 @@ public class PlayerInteractions : MonoBehaviour
             raceManager.GetComponent<RaceManagerScript>().currentPoints++;            
             other.gameObject.SetActive(false);
         }
+
+        //If you run into a PointsBooster, increase points
+        if (other.tag == "LapCounter")
+        {
+            raceManager.GetComponent<RaceManagerScript>().UpdateLapCount();
+            raceManager.GetComponent<RaceManagerScript>().NewLap();
+        }
     }
     #endregion
 }

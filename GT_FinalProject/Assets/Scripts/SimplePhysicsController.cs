@@ -10,11 +10,13 @@ public class SimplePhysicsController : MonoBehaviour
     private float eInput;
 
     private Rigidbody rb;
+    private GameObject raceManager;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        raceManager = GameObject.Find("RaceManager");
     }
 
     public float speed = 5.0f;
@@ -31,7 +33,7 @@ public class SimplePhysicsController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (rb!=null)
+        if (rb!=null && raceManager.GetComponent<RaceManagerScript>().isRacing)
         {
             
             //forward and backward movement

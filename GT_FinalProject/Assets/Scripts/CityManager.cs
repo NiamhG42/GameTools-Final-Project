@@ -199,6 +199,7 @@ namespace GRIDCITY
             }
 
         }
+
         void SetPathSlots()
         {
             int xPathOffSet = 4;

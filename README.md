@@ -53,3 +53,11 @@ Final Project (and supporting documentation) for Game Tools 2020
 * Made rough version of "PointsBoosters" that the player can drive through to increase score
 
 * Points now display (UI)
+
+* Registers start and end of the race
+
+* Registers different laps
+
+* Displays different laps
+
+* Implemented countdown before the start of the race

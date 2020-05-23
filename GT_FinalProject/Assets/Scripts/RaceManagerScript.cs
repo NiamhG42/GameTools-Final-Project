@@ -7,11 +7,11 @@ public class RaceManagerScript : MonoBehaviour
 {
     #region Fields
 
-    public bool isRacing;
-    public Text timerText, pointsText;
-    private float currentTime, finalTime;
+    public bool isRacing, raceFinished;
+    public Text timerText, pointsText, lapText, countdownText;
+    private float currentTime, finalTime, countdownTime;
     public int currentPoints;
-    private int finalPoints;
+    private int finalPoints, currentLap;
 
     public GameObject[] pointsBooster;
 
@@ -23,7 +23,9 @@ public class RaceManagerScript : MonoBehaviour
     void Start()
     {
         currentTime = 0;
+        countdownTime = 3.4f;
         currentPoints = 0;
+        currentLap = 1;
     }
 
     // Update is called once per frame
@@ -31,8 +33,15 @@ public class RaceManagerScript : MonoBehaviour
     {  
         if (isRacing)
         {
+            countdownTime = 3.4f;
+            countdownText.gameObject.SetActive(false);
+
             RunTimer();
-            DisplayPoints();
+            DisplayPointsAndLaps();
+        }
+        else if(raceFinished)
+        {
+            StartCountdown();
         }
     }
     #endregion
@@ -50,16 +59,57 @@ public class RaceManagerScript : MonoBehaviour
         timerText.text = "Time: " + minutes + "." + seconds;
     }
 
-    void DisplayPoints()
+    void DisplayPointsAndLaps()
     {
         pointsText.text = "Points: " + currentPoints;
+        lapText.text = "Lap: " +  currentLap+ "/3";
     }
+
+    void StartCountdown()
+    {
+        countdownText.gameObject.SetActive(true);
+
+        if (countdownTime >0)
+        {
+            countdownTime -= Time.deltaTime;
+
+            string countdownSeconds = (countdownTime % 60).ToString("f0");
+
+            countdownText.text = countdownSeconds;
+        }
+
+        if (countdownTime < 0)
+        {
+            StartRace();
+        }
+    }
+
+    void StartRace()
+    {
+        if (!isRacing)
+        {
+            currentLap = 1;
+            currentTime = 0;
+            currentPoints = 0;
+            isRacing = true;
+        }
+     }
+
+    public void UpdateLapCount()
+    {
+        currentLap++;
+        if (currentLap > 3)
+        {
+            FinishRace();
+        }
+    } 
 
     void FinishRace()
     {
         if (currentTime != 0)
         {
             isRacing = false;
+            raceFinished = true;
 
             //Record final time
             finalTime = currentTime;
@@ -70,11 +120,10 @@ public class RaceManagerScript : MonoBehaviour
             finalPoints = currentPoints;
             //Reset points
             currentPoints = 0;
-   
         }
     }
 
-    void RestartLap()
+    public void NewLap()
     {
         for (int i = 0; i < pointsBooster.Length; i++)
         {
