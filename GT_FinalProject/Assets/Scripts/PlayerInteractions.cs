@@ -24,7 +24,7 @@ public class PlayerInteractions : MonoBehaviour
             other.gameObject.SetActive(false);
         }
 
-        //If you run into a PointsBooster, increase points
+        //If you run into a LapCounter, increase Lap Count
         if (other.tag == "LapCounter")
         {
             raceManager.GetComponent<RaceManagerScript>().UpdateLapCount();

@@ -7144,6 +7144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isRacing: 0
+  raceFinished: 0
   timerText: {fileID: 948714011}
   pointsText: {fileID: 1051513575}
   lapText: {fileID: 1966017927}
@@ -7151,6 +7152,10 @@ MonoBehaviour:
   currentPoints: 0
   pointsBooster:
   - {fileID: 313684641}
+  highScores:
+  - 100
+  - 200
+  - 300
 --- !u!4 &391569530
 Transform:
   m_ObjectHideFlags: 0
@@ -30348,7 +30353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db56af8fc3ba79540a559bfecc1218d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  raceManager: {fileID: 0}
+  raceManager: {fileID: 391569528}
 --- !u!4 &7365848576190040944
 Transform:
   m_ObjectHideFlags: 0

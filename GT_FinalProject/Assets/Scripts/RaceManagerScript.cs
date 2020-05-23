@@ -15,6 +15,9 @@ public class RaceManagerScript : MonoBehaviour
 
     public GameObject[] pointsBooster;
 
+    private float currentScore;
+    public float[] highScores = new float[3];
+
     #endregion
 
     #region Methods
@@ -22,6 +25,10 @@ public class RaceManagerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        highScores[0] = PlayerPrefs.GetFloat("FirstPlaceScore", 0);
+        highScores[1] = PlayerPrefs.GetFloat("SecondPlaceScore", 0);
+        highScores[2] =PlayerPrefs.GetFloat("ThirdPlaceScore", 0);
+
         currentTime = 0;
         countdownTime = 3.4f;
         currentPoints = 0;
@@ -39,7 +46,7 @@ public class RaceManagerScript : MonoBehaviour
             RunTimer();
             DisplayPointsAndLaps();
         }
-        else if(raceFinished)
+        else if(!raceFinished)
         {
             StartCountdown();
         }
@@ -113,14 +120,51 @@ public class RaceManagerScript : MonoBehaviour
 
             //Record final time
             finalTime = currentTime;
-            //Reset current time
-            currentTime = 0;
-
             //Record final points
             finalPoints = currentPoints;
+
+            UpdateHighScores();
+
+            //Reset current time
+            currentTime = 0;
             //Reset points
             currentPoints = 0;
         }
+    }
+
+    void UpdateHighScores()
+    {
+        currentScore = currentTime - currentPoints;
+
+        //If current score is better than lowest previous highscore
+        //Add it to the scoreboard
+        if (currentScore < highScores[highScores.Length-1])
+        {
+            highScores[highScores.Length-1] = currentScore;
+        }
+
+        
+        //Sort highscore values in ascending order
+        for (int i=0; i<highScores.Length; i++)
+        {
+            for (int j = i+1; j < highScores.Length; j++)
+            {
+                if (highScores[j] < highScores[i])
+                {
+                    //Swap
+                    float tempHighScore = highScores[i];
+                    highScores[i] = highScores[j];
+                    highScores[j] = tempHighScore;
+                }
+            }
+        }
+
+        //Save high scores
+        PlayerPrefs.SetFloat("FirstPlaceScore", highScores[0]);
+        PlayerPrefs.SetFloat("SecondPlaceScore", highScores[1]);
+        PlayerPrefs.SetFloat("ThirdPlaceScore", highScores[2]);
+        PlayerPrefs.Save();
+
     }
 
     public void NewLap()

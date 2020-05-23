@@ -61,3 +61,9 @@ Final Project (and supporting documentation) for Game Tools 2020
 * Displays different laps
 
 * Implemented countdown before the start of the race
+
+* Records final score and compares it with previous final scores
+
+* Sorts high scores into a leaderboard
+
+* Displays rudimentary leaderboard in the menu screens
