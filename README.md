@@ -1,7 +1,7 @@
 # GameTools-Final-Project
 Final Project (and supporting documentation) for Game Tools 2020
 
-# Log
+### Log
 
 * Made the city bigger (more buildings)
 
@@ -18,13 +18,13 @@ Final Project (and supporting documentation) for Game Tools 2020
 * If a block is surrounded, its mesh doesn't render
 
 * Designed and added new materials:
-- Wood (Yellow, White, Green)
-- Basic Tile (Yellow, White, Green)
-- "Daisy" themed tiles
-- "Sunflower" themed tiles
-- "Poppy" themed tiles
-- Racetrack tile
-- Glass
+  - Wood (Yellow, White, Green)
+  - Basic Tile (Yellow, White, Green)
+  - "Daisy" themed tiles
+  - "Sunflower" themed tiles
+  - "Poppy" themed tiles
+  - Racetrack tile
+  - Glass
 
 * Created perlin noise texture for land outside city
 
@@ -45,3 +45,5 @@ Final Project (and supporting documentation) for Game Tools 2020
 * Fixed issue where the player "car" clips through objects
 
 * Made a simple menu screen and a screen to explain the game's controls
+
+* Changed layout of racetrack (corners were too tight and hard to turn)

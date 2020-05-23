@@ -65,7 +65,7 @@ namespace GRIDCITY
             MakeOuterTerrain();
 
 
-            
+           
         //Make "roads" to divide the city up in a grid
             for (int x = 0; x < citySize; x++) {
                 for (int z = 5; z < citySize; z += 8)
@@ -75,21 +75,26 @@ namespace GRIDCITY
                 }
             }
 
+            
         //Block off "shortcuts" where the city road cuts through the racetrack
-            for (int x = 6; x < 16; x++)
+            for (int z = 7; z < 15; z++)
             {
-                SetRoadSlot(13, 0, x, false);
+                SetRoadSlot(5, 0, z, false);
             }
-            for (int x = 6; x < 9; x++)
+            for (int z = 5; z < 17; z++)
+            {
+                SetRoadSlot(13, 0, z, false);
+            }
+            for (int x = 15; x < 21; x++)
             {
                 SetRoadSlot(x, 0, 5, false);
-
             }
-            SetRoadSlot(17, 0, 5, false);       
+            for (int x =15; x<23; x++)
+            {
+                SetRoadSlot(x, 0, 13, false);
+            }
+      
 
-                
-
-            
 
             /*
                 //BUILD CITY WALLS - add your code below
@@ -194,159 +199,97 @@ namespace GRIDCITY
             }
 
         }
-
-
-
         void SetPathSlots()
         {
             int xPathOffSet = 4;
             int zPathOffSet = 4;
 
-                SetSlot(xPathOffSet, 0, zPathOffSet + 7, true);
-                SetSlot(xPathOffSet, 0, zPathOffSet + 8, true);
-                SetSlot(xPathOffSet, 0, zPathOffSet + 9, true);
-                SetSlot(xPathOffSet, 0, zPathOffSet + 10, true);
+            // xPathOffSet + 0
+            for (int i = 9; i <= 10; i++) { SetSlot(xPathOffSet + 0, 0, zPathOffSet + i, true); }
 
-                SetSlot(xPathOffSet + 1, 0, zPathOffSet + 7, true);
-                SetSlot(xPathOffSet + 1, 0, zPathOffSet + 8, true);
-                SetSlot(xPathOffSet + 1, 0, zPathOffSet + 9, true);
-                SetSlot(xPathOffSet + 1, 0, zPathOffSet + 10, true);
+            // xPathOffSet + 1
+            for (int i = 2; i <= 3; i++) { SetSlot(xPathOffSet + 1, 0, zPathOffSet + i, true); }
+            for (int i = 9; i <= 10; i++) { SetSlot(xPathOffSet + 1, 0, zPathOffSet + i, true); }
 
-                SetSlot(xPathOffSet + 2, 0, zPathOffSet + 9, true);
-                SetSlot(xPathOffSet + 2, 0, zPathOffSet + 10, true);
+            // xPathOffSet + 2
+            for (int i = 1; i <= 4; i++) { SetSlot(xPathOffSet + 2, 0, zPathOffSet + i, true); }
+            for (int i = 9; i <= 10; i++) { SetSlot(xPathOffSet + 2, 0, zPathOffSet + i, true); }
 
-                SetSlot(xPathOffSet + 3, 0, zPathOffSet + 2, true);
-                SetSlot(xPathOffSet + 3, 0, zPathOffSet + 3, true);
-                SetSlot(xPathOffSet + 3, 0, zPathOffSet + 4, true);
-                SetSlot(xPathOffSet + 3, 0, zPathOffSet + 5, true);
-                SetSlot(xPathOffSet + 3, 0, zPathOffSet + 8, true);
-                SetSlot(xPathOffSet + 3, 0, zPathOffSet + 9, true);
-                SetSlot(xPathOffSet + 3, 0, zPathOffSet + 10, true);
+            // xPathOffSet + 3
+            for (int i=0; i <=5; i++) { SetSlot(xPathOffSet + 3, 0, zPathOffSet + i, true); }
+            for (int i = 9; i <= 10; i++) { SetSlot(xPathOffSet + 3, 0, zPathOffSet + i, true); }
 
-                SetSlot(xPathOffSet + 4, 0, zPathOffSet + 2, true);
-                SetSlot(xPathOffSet + 4, 0, zPathOffSet + 3, true);
-                SetSlot(xPathOffSet + 4, 0, zPathOffSet + 4, true);
-                SetSlot(xPathOffSet + 4, 0, zPathOffSet + 5, true);
-                SetSlot(xPathOffSet + 4, 0, zPathOffSet + 6, true);
-                SetSlot(xPathOffSet + 4, 0, zPathOffSet + 8, true);
+            // xPathOffSet + 4
+            for (int i = 0; i <= 5; i++) { SetSlot(xPathOffSet + 4, 0, zPathOffSet + i, true); }
+            for (int i = 9; i <= 10; i++) { SetSlot(xPathOffSet + 4, 0, zPathOffSet + i, true); }
+            for (int i = 13; i <= 14; i++) { SetSlot(xPathOffSet + 4, 0, zPathOffSet + i, true); }
 
-                SetSlot(xPathOffSet + 5, 0, zPathOffSet + 1, true);
-                SetSlot(xPathOffSet + 5, 0, zPathOffSet + 2, true);
-                SetSlot(xPathOffSet + 5, 0, zPathOffSet + 3, true);
-                SetSlot(xPathOffSet + 5, 0, zPathOffSet + 5, true);
-                SetSlot(xPathOffSet + 5, 0, zPathOffSet + 6, true);
-                SetSlot(xPathOffSet + 5, 0, zPathOffSet + 8, true);
-                SetSlot(xPathOffSet + 5, 0, zPathOffSet + 9, true);
-                SetSlot(xPathOffSet + 5, 0, zPathOffSet + 10, true);
-                SetSlot(xPathOffSet + 5, 0, zPathOffSet + 12, true);
-                SetSlot(xPathOffSet + 5, 0, zPathOffSet + 13, true);
+            // xPathOffSet +5
+            for (int i = 0; i <= 5; i++) { SetSlot(xPathOffSet + 5, 0, zPathOffSet + i, true);}
+            for (int i = 9; i <= 10; i++) { SetSlot(xPathOffSet + 5, 0, zPathOffSet + i, true); }
+            for (int i = 13; i <= 14; i++) { SetSlot(xPathOffSet + 5, 0, zPathOffSet + i, true); }
 
-                SetSlot(xPathOffSet + 6, 0, zPathOffSet + 1, true);
-                SetSlot(xPathOffSet + 6, 0, zPathOffSet + 2, true);
-                SetSlot(xPathOffSet + 6, 0, zPathOffSet + 3, true);
-                SetSlot(xPathOffSet + 6, 0, zPathOffSet + 5, true);
-                SetSlot(xPathOffSet + 6, 0, zPathOffSet + 6, true);
-                SetSlot(xPathOffSet + 6, 0, zPathOffSet + 9, true);
-                SetSlot(xPathOffSet + 6, 0, zPathOffSet + 10, true);
-                SetSlot(xPathOffSet + 6, 0, zPathOffSet + 13, true);
-                SetSlot(xPathOffSet + 6, 0, zPathOffSet + 14, true);
+            // xPathOffSet + 6
+            for (int i = 0; i <= 1; i++) { SetSlot(xPathOffSet + 6, 0, zPathOffSet + i, true); }
+            for (int i = 4; i <= 5; i++) { SetSlot(xPathOffSet + 6, 0, zPathOffSet + i, true); }
+            for (int i = 9; i <= 10; i++) { SetSlot(xPathOffSet + 6, 0, zPathOffSet + i, true); }
+            for (int i = 13; i <= 14; i++) { SetSlot(xPathOffSet + 6, 0, zPathOffSet + i, true); }
 
-                SetSlot(xPathOffSet + 7, 0, zPathOffSet + 0, true);
-                SetSlot(xPathOffSet + 7, 0, zPathOffSet + 1, true);
-                SetSlot(xPathOffSet + 7, 0, zPathOffSet + 2, true);
-                SetSlot(xPathOffSet + 7, 0, zPathOffSet + 5, true);
-                SetSlot(xPathOffSet + 7, 0, zPathOffSet + 6, true);
-                SetSlot(xPathOffSet + 7, 0, zPathOffSet + 7, true);
-                SetSlot(xPathOffSet + 7, 0, zPathOffSet + 8, true);
-                SetSlot(xPathOffSet + 7, 0, zPathOffSet + 9, true);
-                SetSlot(xPathOffSet + 7, 0, zPathOffSet + 10, true);
-                SetSlot(xPathOffSet + 7, 0, zPathOffSet + 13, true);
-                SetSlot(xPathOffSet + 7, 0, zPathOffSet + 14, true);
+            // xPathOffSet + 7
+            for (int i = 0; i <= 1; i++) { SetSlot(xPathOffSet + 7, 0, zPathOffSet + i, true); }
+            for (int i = 4; i <= 5; i++) { SetSlot(xPathOffSet + 7, 0, zPathOffSet + i, true); }
+            for (int i = 8; i <= 10; i++) { SetSlot(xPathOffSet + 7, 0, zPathOffSet + i, true); }
+            for (int i = 13; i <= 14; i++) { SetSlot(xPathOffSet + 7, 0, zPathOffSet + i, true); }
 
-                SetSlot(xPathOffSet + 8, 0, zPathOffSet + 0, true);
-                SetSlot(xPathOffSet + 8, 0, zPathOffSet + 1, true);
-                SetSlot(xPathOffSet + 8, 0, zPathOffSet + 2, true);
-                SetSlot(xPathOffSet + 8, 0, zPathOffSet + 5, true);
-                SetSlot(xPathOffSet + 8, 0, zPathOffSet + 6, true);
-                SetSlot(xPathOffSet + 8, 0, zPathOffSet + 7, true);
-                SetSlot(xPathOffSet + 8, 0, zPathOffSet + 8, true);
-                SetSlot(xPathOffSet + 8, 0, zPathOffSet + 9, true);
-                SetSlot(xPathOffSet + 8, 0, zPathOffSet + 13, true);
-                SetSlot(xPathOffSet + 8, 0, zPathOffSet + 14, true);
+            // xPathOffSet + 8
+            for (int i = 0; i <= 1; i++) { SetSlot(xPathOffSet + 8, 0, zPathOffSet + i, true); }
+            for (int i = 4; i <= 5; i++) { SetSlot(xPathOffSet + 8, 0, zPathOffSet + i, true); }
+            for (int i = 8; i <= 9; i++) { SetSlot(xPathOffSet + 8, 0, zPathOffSet + i, true); }
+            for (int i = 13; i <= 14; i++) { SetSlot(xPathOffSet + 8, 0, zPathOffSet + i, true); }
 
-                SetSlot(xPathOffSet + 9, 0, zPathOffSet + 0, true);
-                SetSlot(xPathOffSet + 9, 0, zPathOffSet + 1, true);
-                SetSlot(xPathOffSet + 9, 0, zPathOffSet + 12, true);
-                SetSlot(xPathOffSet + 9, 0, zPathOffSet + 13, true);
-                SetSlot(xPathOffSet + 9, 0, zPathOffSet + 14, true);
+            // xPathOffSet + 9
+            for (int i = 0; i <= 1; i++) { SetSlot(xPathOffSet + 9, 0, zPathOffSet + i, true); }
+            for (int i = 4; i <= 9; i++) { SetSlot(xPathOffSet + 9, 0, zPathOffSet + i, true); }
+            for (int i = 12; i <= 14; i++) { SetSlot(xPathOffSet + 9, 0, zPathOffSet + i, true); }
 
-                SetSlot(xPathOffSet + 10, 0, zPathOffSet + 0, true);
-                SetSlot(xPathOffSet + 10, 0, zPathOffSet + 1, true);
-                SetSlot(xPathOffSet + 10, 0, zPathOffSet + 2, true);
-                SetSlot(xPathOffSet + 10, 0, zPathOffSet + 12, true);
-                SetSlot(xPathOffSet + 10, 0, zPathOffSet + 13, true);
-                SetSlot(xPathOffSet + 10, 0, zPathOffSet + 14, true);
+            // xPathOffSet + 10
+            for (int i = 0; i <= 1; i++) { SetSlot(xPathOffSet + 10, 0, zPathOffSet + i, true); }
+            for (int i = 4; i <= 9; i++) { SetSlot(xPathOffSet + 10, 0, zPathOffSet + i, true); }
+            for (int i = 12; i <= 14; i++) { SetSlot(xPathOffSet + 10, 0, zPathOffSet + i, true); }
 
-                SetSlot(xPathOffSet + 11, 0, zPathOffSet + 0, true);
-                SetSlot(xPathOffSet + 11, 0, zPathOffSet + 1, true);
-                SetSlot(xPathOffSet + 11, 0, zPathOffSet + 2, true);
-                SetSlot(xPathOffSet + 11, 0, zPathOffSet + 3, true);
-                SetSlot(xPathOffSet + 11, 0, zPathOffSet + 4, true);
-                SetSlot(xPathOffSet + 11, 0, zPathOffSet + 12, true);
-                SetSlot(xPathOffSet + 11, 0, zPathOffSet + 13, true);
+            // xPathOffSet + 11
+            for (int i = 0; i <= 2; i++) { SetSlot(xPathOffSet + 11, 0, zPathOffSet + i, true); }
+            for (int i = 5; i <= 8; i++) { SetSlot(xPathOffSet + 11, 0, zPathOffSet + i, true); }
+            for (int i = 12; i <= 13; i++) { SetSlot(xPathOffSet + 11, 0, zPathOffSet + i, true); }
 
-                SetSlot(xPathOffSet + 12, 0, zPathOffSet + 1, true);
-                SetSlot(xPathOffSet + 12, 0, zPathOffSet + 2, true);
-                SetSlot(xPathOffSet + 12, 0, zPathOffSet + 3, true);
-                SetSlot(xPathOffSet + 12, 0, zPathOffSet + 4, true);
-                SetSlot(xPathOffSet + 12, 0, zPathOffSet + 5, true);
-                SetSlot(xPathOffSet + 12, 0, zPathOffSet + 11, true);
-                SetSlot(xPathOffSet + 12, 0, zPathOffSet + 12, true);
-                SetSlot(xPathOffSet + 12, 0, zPathOffSet + 13, true);
+            // xPathOffSet + 12
+            for (int i = 0; i <= 3; i++) { SetSlot(xPathOffSet + 12, 0, zPathOffSet + i, true); }
+            for (int i = 6; i <= 7; i++) { SetSlot(xPathOffSet + 12, 0, zPathOffSet + i, true); }
+            for (int i = 11; i <= 13; i++) { SetSlot(xPathOffSet + 12, 0, zPathOffSet + i, true); }
 
-                SetSlot(xPathOffSet + 13, 0, zPathOffSet + 4, true);
-                SetSlot(xPathOffSet + 13, 0, zPathOffSet + 5, true);
-                SetSlot(xPathOffSet + 13, 0, zPathOffSet + 11, true);
-                SetSlot(xPathOffSet + 13, 0, zPathOffSet + 12, true);
-                SetSlot(xPathOffSet + 13, 0, zPathOffSet + 13, true);
+            // xPathOffSet + 13
+            for (int i = 1; i <= 3; i++) { SetSlot(xPathOffSet + 13, 0, zPathOffSet + i, true); }
+            for (int i = 11; i <= 13; i++) { SetSlot(xPathOffSet + 13, 0, zPathOffSet + i, true); }
 
-                SetSlot(xPathOffSet + 14, 0, zPathOffSet + 2, true);
-                SetSlot(xPathOffSet + 14, 0, zPathOffSet + 3, true);
-                SetSlot(xPathOffSet + 14, 0, zPathOffSet + 4, true);
-                SetSlot(xPathOffSet + 14, 0, zPathOffSet + 5, true);
-                SetSlot(xPathOffSet + 14, 0, zPathOffSet + 10, true);
-                SetSlot(xPathOffSet + 14, 0, zPathOffSet + 11, true);
-                SetSlot(xPathOffSet + 14, 0, zPathOffSet + 12, true);
+            // xPathOffSet + 14
+            for (int i = 2; i <= 3; i++) { SetSlot(xPathOffSet + 14, 0, zPathOffSet + i, true); }
+            for (int i = 10; i <= 12; i++) { SetSlot(xPathOffSet + 14, 0, zPathOffSet + i, true); }
 
-                SetSlot(xPathOffSet + 15, 0, zPathOffSet + 2, true);
-                SetSlot(xPathOffSet + 15, 0, zPathOffSet + 3, true);
-                SetSlot(xPathOffSet + 15, 0, zPathOffSet + 10, true);
-                SetSlot(xPathOffSet + 15, 0, zPathOffSet + 11, true);
-                SetSlot(xPathOffSet + 15, 0, zPathOffSet + 12, true);
+            // xPathOffSet + 15
+            for (int i = 2; i <= 4; i++) { SetSlot(xPathOffSet + 15, 0, zPathOffSet + i, true); }
+            for (int i = 9; i <= 12; i++) { SetSlot(xPathOffSet + 15, 0, zPathOffSet + i, true); }
 
-                SetSlot(xPathOffSet + 16, 0, zPathOffSet + 2, true);
-                SetSlot(xPathOffSet + 16, 0, zPathOffSet + 3, true);
-                SetSlot(xPathOffSet + 16, 0, zPathOffSet + 4, true);
-                SetSlot(xPathOffSet + 16, 0, zPathOffSet + 5, true);
-                SetSlot(xPathOffSet + 16, 0, zPathOffSet + 6, true);
-                SetSlot(xPathOffSet + 16, 0, zPathOffSet + 7, true);
-                SetSlot(xPathOffSet + 16, 0, zPathOffSet + 8, true);
-                SetSlot(xPathOffSet + 16, 0, zPathOffSet + 9, true);
-                SetSlot(xPathOffSet + 16, 0, zPathOffSet + 10, true);
-                SetSlot(xPathOffSet + 16, 0, zPathOffSet + 11, true);
+            // xPathOffSet + 16
+            for (int i = 2; i <= 11; i++) { SetSlot(xPathOffSet + 16, 0, zPathOffSet + i, true); }
 
-                SetSlot(xPathOffSet + 17, 0, zPathOffSet + 2, true);
-                SetSlot(xPathOffSet + 17, 0, zPathOffSet + 3, true);
-                SetSlot(xPathOffSet + 17, 0, zPathOffSet + 4, true);
-                SetSlot(xPathOffSet + 17, 0, zPathOffSet + 5, true);
-                SetSlot(xPathOffSet + 17, 0, zPathOffSet + 6, true);
-                SetSlot(xPathOffSet + 17, 0, zPathOffSet + 7, true);
-                SetSlot(xPathOffSet + 17, 0, zPathOffSet + 8, true);
-                SetSlot(xPathOffSet + 17, 0, zPathOffSet + 9, true);
-                SetSlot(xPathOffSet + 17, 0, zPathOffSet + 10, true);
-                SetSlot(xPathOffSet + 17, 0, zPathOffSet + 11, true);
-                
+            // xPathOffSet + 17
+            for (int i = 2; i <= 11; i++) { SetSlot(xPathOffSet + 17, 0, zPathOffSet + i, true); }
+
+            // xPathOffSet + 18
+            for (int i = 5; i <= 8; i++) { SetSlot(xPathOffSet + 18, 0, zPathOffSet + i, true); }    
         }
+
+        
 
         void MakeOuterTerrain()
         {
