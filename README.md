@@ -48,4 +48,8 @@ Final Project (and supporting documentation) for Game Tools 2020
 
 * Changed layout of racetrack (corners were too tight and hard to turn)
 
-* Game now has a timer and displays the current time.
+* Game now has a timer and displays the race's current time (UI)
+
+* Made rough version of "PointsBoosters" that the player can drive through to increase score
+
+* Points now display (UI)

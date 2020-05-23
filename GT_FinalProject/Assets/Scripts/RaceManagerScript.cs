@@ -8,8 +8,13 @@ public class RaceManagerScript : MonoBehaviour
     #region Fields
 
     public bool isRacing;
-    public Text timerText;
+    public Text timerText, pointsText;
     private float currentTime, finalTime;
+    public int currentPoints;
+    private int finalPoints;
+
+    public GameObject[] pointsBooster;
+
     #endregion
 
     #region Methods
@@ -18,6 +23,7 @@ public class RaceManagerScript : MonoBehaviour
     void Start()
     {
         currentTime = 0;
+        currentPoints = 0;
     }
 
     // Update is called once per frame
@@ -26,6 +32,7 @@ public class RaceManagerScript : MonoBehaviour
         if (isRacing)
         {
             RunTimer();
+            DisplayPoints();
         }
     }
     #endregion
@@ -40,7 +47,12 @@ public class RaceManagerScript : MonoBehaviour
         string seconds = (currentTime % 60).ToString("f2");
 
         //Display the time
-        timerText.text = "Time: " + minutes + ":" + seconds;
+        timerText.text = "Time: " + minutes + "." + seconds;
+    }
+
+    void DisplayPoints()
+    {
+        pointsText.text = "Points: " + currentPoints;
     }
 
     void FinishRace()
@@ -48,10 +60,25 @@ public class RaceManagerScript : MonoBehaviour
         if (currentTime != 0)
         {
             isRacing = false;
+
             //Record final time
             finalTime = currentTime;
             //Reset current time
             currentTime = 0;
+
+            //Record final points
+            finalPoints = currentPoints;
+            //Reset points
+            currentPoints = 0;
+   
+        }
+    }
+
+    void RestartLap()
+    {
+        for (int i = 0; i < pointsBooster.Length; i++)
+        {
+            pointsBooster[i].gameObject.SetActive(true);
         }
     }
     #endregion
