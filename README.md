@@ -47,3 +47,5 @@ Final Project (and supporting documentation) for Game Tools 2020
 * Made a simple menu screen and a screen to explain the game's controls
 
 * Changed layout of racetrack (corners were too tight and hard to turn)
+
+* Game now has a timer and displays the current time.
