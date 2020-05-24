@@ -8,7 +8,7 @@ public class CaveManager : MonoBehaviour
     public GameObject columnPrefab;
     private Quaternion horizontalRotation = Quaternion.Euler(0, 0, 90);
     private float xPos, yPos, zPos;
-    private int randomPlacement;
+    private int randomPlacement, lastPlacement;
     #endregion
 
     #region UnityMethods
@@ -18,12 +18,23 @@ public class CaveManager : MonoBehaviour
         yPos = 6;
         xPos = 84;
         float zStartPos = -34.5f;
+        lastPlacement = 0;
 
         for (int zOffset =0; zOffset < 50; zOffset+=10)
         {
             zPos = zStartPos + zOffset;
+
+            //Randomise column placement
             randomPlacement = Random.Range(0, 5);
-           
+
+            //Don't use the same placement twice in a row
+            int tempPlacement = lastPlacement;
+            while (randomPlacement == tempPlacement)
+            {
+                randomPlacement = Random.Range(0, 5);
+            }
+            lastPlacement = randomPlacement;
+
             switch (randomPlacement)
             {
                 case 0:
@@ -86,14 +97,14 @@ public class CaveManager : MonoBehaviour
 
     void ColumnsBottomGap(float z)
     {
-        Instantiate(columnPrefab, new Vector3(xPos, 5.4f, z), horizontalRotation);
-        Instantiate(columnPrefab, new Vector3(xPos, 8.7f, z), horizontalRotation);
+        Instantiate(columnPrefab, new Vector3(xPos, 6.6f, z), horizontalRotation);
+        Instantiate(columnPrefab, new Vector3(xPos, 9.9f, z), horizontalRotation);
     }
 
     void ColumnsMiddleGapHorizontal(float z)
     {
         Instantiate(columnPrefab, new Vector3(xPos, 2.2f, z), horizontalRotation);
-        Instantiate(columnPrefab, new Vector3(xPos, 8.7f, z), horizontalRotation);
+        Instantiate(columnPrefab, new Vector3(xPos, 9.9f, z), horizontalRotation);
     }
     #endregion
 }

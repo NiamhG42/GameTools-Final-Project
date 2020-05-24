@@ -79,5 +79,6 @@ Final Project (and supporting documentation) for Game Tools 2020
 * Created cave walls
 
 * Giant crystal columns added to cave
-  -Randomly selects between different formations
-  -Places columns each time a game starts (code)
+  - Randomly selects between different formations
+  - Places columns each time a game starts (code)
+  - Doesn't use same formation twice in a row
