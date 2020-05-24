@@ -84,6 +84,7 @@
     <Compile Include="Assets\Scripts\StaticTest.cs" />
     <Compile Include="Assets\Scripts\TerrainBehaviour.cs" />
     <Compile Include="Assets\Scripts\TreeTowerBlock.cs" />
+    <Compile Include="Assets\TerrainGenerator.cs" />
     <None Include="Assets\Shaders\SpaceGridPoints.shader" />
     <None Include="Assets\Shaders\GradientSkybox.shader" />
     <None Include="Assets\Shaders\SpaceGridLines.shader" />

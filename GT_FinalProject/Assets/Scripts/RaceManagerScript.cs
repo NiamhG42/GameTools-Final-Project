@@ -30,7 +30,7 @@ public class RaceManagerScript : MonoBehaviour
         highScores[2] =PlayerPrefs.GetFloat("ThirdPlaceScore", 0);
 
         currentTime = 0;
-        countdownTime = 3.4f;
+        countdownTime = 3.5f;
         currentPoints = 0;
         currentLap = 1;
     }
@@ -40,7 +40,7 @@ public class RaceManagerScript : MonoBehaviour
     {  
         if (isRacing)
         {
-            countdownTime = 3.4f;
+            countdownTime = 3.5f;
             countdownText.gameObject.SetActive(false);
 
             RunTimer();

@@ -48,13 +48,13 @@ public class SimplePhysicsController : MonoBehaviour
             
             //Go faster if space is held down
             if (Input.GetKey("space")){    
-                speed = 8.0f;
+                speed = 10.0f;
             }
             else {speed = 5.0f; }
 
 
 
-            //the code below stabilises the vehicle roll after a collision or a side turn when pitching, but only when player lets go of controls
+            //the code below stabilises the vehicle roll after a collision
             // if ((vInput==0f)&&(hInput == 0f)&&(eInput == 0f))
             // {
             //first we look at the local "right" vector of the vehicle

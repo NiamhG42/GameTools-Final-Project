@@ -69,3 +69,5 @@ Final Project (and supporting documentation) for Game Tools 2020
 * Displays rudimentary leaderboard in the menu screens
 
 * Implemented basic teleportation 
+
+* Created cave floor (perlin noise used to generate terrain heights)
