@@ -37,14 +37,15 @@ public class RaceManagerScript : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {  
+    {
+        DisplayPointsAndLaps();
+
         if (isRacing)
         {
             countdownTime = 3.5f;
             countdownText.gameObject.SetActive(false);
 
             RunTimer();
-            DisplayPointsAndLaps();
         }
         else if(!raceFinished)
         {
@@ -68,7 +69,7 @@ public class RaceManagerScript : MonoBehaviour
 
     void DisplayPointsAndLaps()
     {
-        pointsText.text = "Points: " + currentPoints;
+        pointsText.text = "Points: " + currentPoints + "/" + (pointsBoosterList.Count*3);
         lapText.text = "Lap: " +  currentLap+ "/3";
     }
 
