@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerInteractions : MonoBehaviour
 {
     #region Fields
-    public GameObject raceManager, teleportTarget1, teleportTarget2;
+    public GameObject raceManager, teleportTarget1, teleportTarget2, caveGroup;
     #endregion
 
     #region UnityMethods
@@ -13,6 +13,7 @@ public class PlayerInteractions : MonoBehaviour
     void Start()
     {
         raceManager = GameObject.Find("RaceManager");
+        caveGroup.gameObject.SetActive(false);
     }
     #endregion
     #region Methods
@@ -34,11 +35,13 @@ public class PlayerInteractions : MonoBehaviour
 
         if (other.tag == "Teleporter1")
         {
+            caveGroup.gameObject.SetActive(true);
             transform.position = teleportTarget1.transform.position;
             transform.rotation = teleportTarget1.transform.rotation;
         }
         if (other.tag == "Teleporter2")
         {
+            caveGroup.gameObject.SetActive(false);
             transform.position = teleportTarget2.transform.position;
             transform.rotation = teleportTarget2.transform.rotation;
         }

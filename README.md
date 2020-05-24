@@ -82,3 +82,11 @@ Final Project (and supporting documentation) for Game Tools 2020
   - Randomly selects between different formations
   - Places columns each time a game starts (code)
   - Doesn't use same formation twice in a row
+
+* Now instantiating "PointsBoosters" in caves via code
+
+* Now adding "PointsBoosters" to list in RaceManager when instantiated
+
+* Cave walls and floor are inactive when not racing through them
+
+* Placed Start/Finish Line and teleporters where they should be

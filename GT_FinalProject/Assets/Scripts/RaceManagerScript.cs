@@ -13,7 +13,7 @@ public class RaceManagerScript : MonoBehaviour
     public int currentPoints;
     private int finalPoints, currentLap;
 
-    public GameObject[] pointsBooster;
+    public List<GameObject> pointsBoosterList = new List<GameObject>();
 
     private float currentScore;
     public float[] highScores = new float[3];
@@ -169,9 +169,9 @@ public class RaceManagerScript : MonoBehaviour
 
     public void NewLap()
     {
-        for (int i = 0; i < pointsBooster.Length; i++)
-        {
-            pointsBooster[i].gameObject.SetActive(true);
+        for (int i = 0; i < pointsBoosterList.Count; i++)
+        {        
+            pointsBoosterList[i].gameObject.SetActive(true);
         }
     }
     #endregion
