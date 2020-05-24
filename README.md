@@ -71,3 +71,13 @@ Final Project (and supporting documentation) for Game Tools 2020
 * Implemented basic teleportation 
 
 * Created cave floor (perlin noise used to generate terrain heights)
+
+* Fixed UI scaling issues (now adjusts to screen size)
+
+* Added crystal texture to cave floor
+
+* Created cave walls
+
+* Giant crystal columns added to cave
+  -Randomly selects between different formations
+  -Places columns each time a game starts (code)
