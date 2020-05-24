@@ -50,7 +50,7 @@ Final Project (and supporting documentation) for Game Tools 2020
 
 * Game now has a timer and displays the race's current time (UI)
 
-* Made rough version of "PointsBoosters" that the player can drive through to increase score
+* Made rough version of "PointsBoosters" that the player can drive through to subtract from final time
 
 * Points now display (UI)
 
@@ -67,3 +67,5 @@ Final Project (and supporting documentation) for Game Tools 2020
 * Sorts high scores into a leaderboard
 
 * Displays rudimentary leaderboard in the menu screens
+
+* Implemented basic teleportation 

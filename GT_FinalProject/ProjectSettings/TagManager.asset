@@ -6,6 +6,8 @@ TagManager:
   tags:
   - PointsBooster
   - LapCounter
+  - Teleporter1
+  - Teleporter2
   layers:
   - Default
   - TransparentFX

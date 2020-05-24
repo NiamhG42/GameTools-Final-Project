@@ -141,7 +141,8 @@ namespace GRIDCITY
                 //if the building is beside the road, don't turn off Renderer
                 if (!(cityManager.CheckRoadSlot(x, y + 1, z) && cityManager.CheckRoadSlot(x, y - 1, z)
                 && cityManager.CheckRoadSlot(x + 1, y, z) && cityManager.CheckRoadSlot(x + 1, y, z)
-                && cityManager.CheckRoadSlot(x, y, z + 1) && cityManager.CheckRoadSlot(x, y, z - 1))) {              
+                && cityManager.CheckRoadSlot(x, y, z + 1) && cityManager.CheckRoadSlot(x, y, z - 1)))
+                {              
                     if (x != 0 && y != 1 && z != 0)
                     {
                         myRenderer.enabled = false;
