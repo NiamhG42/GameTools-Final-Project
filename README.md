@@ -100,3 +100,5 @@ Final Project (and supporting documentation) for Game Tools 2020
 * Can now restart race or return to menu at the end of the game
 
 * Highlights your score in red if you managed to get in 1st, 2nd or 3rd place
+
+* Basic teleporter/portal animations implemented
