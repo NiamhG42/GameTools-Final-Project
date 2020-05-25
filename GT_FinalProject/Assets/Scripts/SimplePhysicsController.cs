@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SimplePhysicsController : MonoBehaviour
 {
-
+    #region Fields
     private float vInput;
     private float hInput;
     private float eInput;
@@ -12,6 +12,14 @@ public class SimplePhysicsController : MonoBehaviour
     private Rigidbody rb;
     private GameObject raceManager;
 
+    public float speed = 5.0f;
+    public float rotSpeed = 180.0f;
+    public float rollResetSpeed = 400f;
+
+    public Vector3 verticalForceDirection, elevationForceDirection;
+    #endregion
+
+    #region UnityMethods
     // Start is called before the first frame update
     void Start()
     {
@@ -19,9 +27,6 @@ public class SimplePhysicsController : MonoBehaviour
         raceManager = GameObject.Find("RaceManager");
     }
 
-    public float speed = 5.0f;
-    public float rotSpeed = 180.0f;
-    public float rollResetSpeed = 400f;
 
     // Update is called once per frame
     void Update()
@@ -35,16 +40,18 @@ public class SimplePhysicsController : MonoBehaviour
     {
         if (rb!=null && raceManager.GetComponent<RaceManagerScript>().isRacing)
         {
-            
+
             //forward and backward movement
-            rb.AddForce(transform.forward * vInput);
+            verticalForceDirection = transform.forward * vInput;
+            rb.AddForce(verticalForceDirection);
 
            //yaw (left/right heading control)
             Quaternion yawRot = Quaternion.AngleAxis(hInput * Time.fixedDeltaTime,Vector3.up);
             rb.MoveRotation(rb.rotation*yawRot);
 
             //elevation (move up/down control)
-           rb.AddForce(transform.up * eInput);
+            elevationForceDirection = transform.up * eInput;
+           rb.AddForce(elevationForceDirection);
             
             //Go faster if space is held down
             if (Input.GetKey("space")){    
@@ -74,5 +81,5 @@ public class SimplePhysicsController : MonoBehaviour
 
         }
     }
-
+    #endregion
 }

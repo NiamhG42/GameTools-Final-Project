@@ -102,3 +102,5 @@ Final Project (and supporting documentation) for Game Tools 2020
 * Highlights your score in red if you managed to get in 1st, 2nd or 3rd place
 
 * Basic teleporter/portal animations implemented
+
+* Simple version of bouncy mushrooms implemented (physics working)

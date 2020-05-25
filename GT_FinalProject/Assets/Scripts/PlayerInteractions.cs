@@ -6,12 +6,14 @@ public class PlayerInteractions : MonoBehaviour
 {
     #region Fields
     public GameObject raceManager, teleportTarget1, teleportTarget2, caveGroup;
+    private Rigidbody rb;
     #endregion
 
     #region UnityMethods
     // Start is called before the first frame update
     void Start()
     {
+        rb = GetComponent<Rigidbody>();
         raceManager = GameObject.Find("RaceManager");
         caveGroup.gameObject.SetActive(false);
     }
@@ -44,6 +46,20 @@ public class PlayerInteractions : MonoBehaviour
             caveGroup.gameObject.SetActive(false);
             transform.position = teleportTarget2.transform.position;
             transform.rotation = teleportTarget2.transform.rotation;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        //If run into something bouncy, bounce back in direction you drove into it from
+        if(collision.gameObject.tag == "Bouncy")
+        {
+            Vector3 verticalForceDirection = gameObject.GetComponent<SimplePhysicsController>().verticalForceDirection;
+            Vector3 elevationForceDirection = gameObject.GetComponent<SimplePhysicsController>().elevationForceDirection;
+         
+            rb.AddForce(-verticalForceDirection*0.7f, ForceMode.Impulse);
+            rb.AddForce(-elevationForceDirection * 0.7f, ForceMode.Impulse);
+
         }
     }
     #endregion
