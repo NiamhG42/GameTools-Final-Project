@@ -8,8 +8,8 @@ public class RaceManagerScript : MonoBehaviour
     #region Fields
 
     public bool isRacing, raceFinished;
-    public Text timerText, pointsText, lapText, countdownText;
-    private float currentTime, finalTime, countdownTime;
+    public Text timerText, pointsText, lapText, countdownText, lapAnnouncerText;
+    private float currentTime, finalTime, countdownTime, lapAnnounceTime;
     public int currentPoints;
     private int finalPoints, currentLap;
 
@@ -33,12 +33,14 @@ public class RaceManagerScript : MonoBehaviour
         countdownTime = 3.5f;
         currentPoints = 0;
         currentLap = 1;
+        lapAnnounceTime = 1.5f;
     }
 
     // Update is called once per frame
     void Update()
     {
         DisplayPointsAndLaps();
+        LapAnnouncerUpdate();
 
         if (isRacing)
         {
@@ -98,6 +100,8 @@ public class RaceManagerScript : MonoBehaviour
         {
             currentLap = 1;
             currentTime = 0;
+            lapAnnouncerText.gameObject.SetActive(true);
+            lapAnnounceTime = 1.5f;
             currentPoints = 0;
             isRacing = true;
         }
@@ -168,8 +172,42 @@ public class RaceManagerScript : MonoBehaviour
 
     }
 
+    void LapAnnouncerUpdate()
+    {
+        if (lapAnnouncerText.gameObject.activeSelf)
+        {
+            lapAnnounceTime -= Time.deltaTime;
+
+            if (lapAnnounceTime < 0)
+            {
+                lapAnnouncerText.gameObject.SetActive(false);
+            }
+        }
+
+        if (currentLap == 1 && isRacing)
+        {
+            lapAnnouncerText.text = "Start!";
+        }
+        else if (currentLap == 2)
+        {
+            lapAnnouncerText.text = "Lap 2";
+        }
+        if (currentLap == 3)
+        {
+            lapAnnouncerText.text = "Final Lap!";
+        }
+        if (currentLap > 3)
+        {
+            Debug.Log("Finish Text Working");
+            lapAnnouncerText.text = "Finish!";
+        }
+    }
+
     public void NewLap()
     {
+        lapAnnounceTime = 1.5f;
+        lapAnnouncerText.gameObject.SetActive(true);
+
         for (int i = 0; i < pointsBoosterList.Count; i++)
         {        
             pointsBoosterList[i].gameObject.SetActive(true);

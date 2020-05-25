@@ -92,3 +92,5 @@ Final Project (and supporting documentation) for Game Tools 2020
 * Placed Start/Finish Line, "PointsBoosters" and teleporters where they should be
 
 * "PointBoosters" properly modelled, lit and sized 
+
+* UI now announces start of race, laps and end of race
