@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class RaceManagerScript : MonoBehaviour
 {
@@ -17,6 +18,12 @@ public class RaceManagerScript : MonoBehaviour
 
     private float currentScore;
     public float[] highScores = new float[3];
+
+    //End of Game 
+    public Text finalTimeText, finalPointsText, finalScoreText;
+    public Text[] highScoresText = new Text[3];
+   // public Text firstPlaceText, secondPlaceText, thirdPlaceText;
+    public GameObject EndOfGameUI, DuringGameUI;
 
     #endregion
 
@@ -34,6 +41,8 @@ public class RaceManagerScript : MonoBehaviour
         currentPoints = 0;
         currentLap = 1;
         lapAnnounceTime = 1.5f;
+        DuringGameUI.gameObject.SetActive(true);
+        EndOfGameUI.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -123,6 +132,9 @@ public class RaceManagerScript : MonoBehaviour
             isRacing = false;
             raceFinished = true;
 
+            DuringGameUI.gameObject.SetActive(false);
+            EndOfGameUI.gameObject.SetActive(true);
+
             //Record final time
             finalTime = currentTime;
             //Record final points
@@ -134,6 +146,52 @@ public class RaceManagerScript : MonoBehaviour
             currentTime = 0;
             //Reset points
             currentPoints = 0;
+
+            //Display Correct UI End Text
+            //TIME
+            string minutes = ((int)finalTime / 60).ToString();
+            string seconds = (finalTime % 60).ToString("f2");
+            finalTimeText.text = "  Final Time: " + minutes + "." + seconds;
+
+            //POINTS
+            finalPointsText.text = "- Final Points: " + finalPoints;
+
+            //FINAL SCORE FOR THIS RACE
+            minutes = ((int)currentScore / 60).ToString();
+            seconds = (currentScore % 60).ToString("f2");
+            finalScoreText.text = "  Final Score: " + minutes+ "." + seconds;
+
+            //HIGH SCORES
+            //FIRST PLACE TEXT
+            minutes = ((int)highScores[0] / 60).ToString();
+            seconds = (highScores[0] % 60).ToString("f2");
+            highScoresText[0].text = "1. " + minutes + "." + seconds;
+
+            //SECOND PLACE TEXT
+            minutes = ((int)highScores[1] / 60).ToString();
+            seconds = (highScores[1] % 60).ToString("f2");
+            highScoresText[1].text = "2. " + minutes + "." + seconds;
+
+            //THIRD PLACE TEXT
+            minutes = ((int)highScores[2] / 60).ToString();
+            seconds = (highScores[2] % 60).ToString("f2");
+            highScoresText[2].text = "3. " + minutes + "." + seconds;
+
+            //If your score is the same as a high score, highlight the high score in red
+            for (int i=0; i<highScoresText.Length; i++)
+            {
+                if (currentScore == highScores[i])
+                {
+                    highScoresText[i].color = Color.red;
+                    finalScoreText.color = Color.red;
+                }
+
+                else
+                {
+                    highScoresText[i].color = Color.white;
+                    finalScoreText.color = Color.white;
+                }
+            }
         }
     }
 
@@ -174,7 +232,7 @@ public class RaceManagerScript : MonoBehaviour
 
     void LapAnnouncerUpdate()
     {
-        if (lapAnnouncerText.gameObject.activeSelf)
+        if (lapAnnouncerText.gameObject.activeSelf && isRacing)
         {
             lapAnnounceTime -= Time.deltaTime;
 
@@ -212,6 +270,17 @@ public class RaceManagerScript : MonoBehaviour
         {        
             pointsBoosterList[i].gameObject.SetActive(true);
         }
+    }
+
+   public void RestartScene()
+    {
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(currentSceneName);
+    }
+
+    public void ReturnToMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
     #endregion
 }
