@@ -104,3 +104,5 @@ Final Project (and supporting documentation) for Game Tools 2020
 * Basic teleporter/portal animations implemented
 
 * Simple version of bouncy mushrooms implemented (physics working)
+
+* Modelled mushrooms and imported. Implemented finished version of bouncy mushrooms.
