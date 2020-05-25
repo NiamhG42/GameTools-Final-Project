@@ -90,3 +90,5 @@ Final Project (and supporting documentation) for Game Tools 2020
 * Cave walls and floor are inactive when not racing through them
 
 * Placed Start/Finish Line, "PointsBoosters" and teleporters where they should be
+
+* "PointBoosters" properly modelled, lit and sized 
