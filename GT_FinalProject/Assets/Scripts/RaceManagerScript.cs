@@ -12,7 +12,8 @@ public class RaceManagerScript : MonoBehaviour
     public Text timerText, pointsText, lapText, countdownText, lapAnnouncerText;
     private float currentTime, finalTime, countdownTime, lapAnnounceTime;
     public int currentPoints;
-    private int finalPoints, currentLap;
+    private int finalPoints;
+        public int currentLap;
 
     public List<GameObject> pointsBoosterList = new List<GameObject>();
 
@@ -25,6 +26,10 @@ public class RaceManagerScript : MonoBehaviour
    // public Text firstPlaceText, secondPlaceText, thirdPlaceText;
     public GameObject EndOfGameUI, DuringGameUI;
 
+    private AudioSource myAudioSource;
+    public AudioClip[] audioClip;
+    private bool countdownSound1Played, countdownSound2Played, countdownSound3Played;
+
     #endregion
 
     #region Methods
@@ -32,6 +37,8 @@ public class RaceManagerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        myAudioSource = GetComponent<AudioSource>();
+
         highScores[0] = PlayerPrefs.GetFloat("FirstPlaceScore", 0);
         highScores[1] = PlayerPrefs.GetFloat("SecondPlaceScore", 0);
         highScores[2] =PlayerPrefs.GetFloat("ThirdPlaceScore", 0);
@@ -90,15 +97,38 @@ public class RaceManagerScript : MonoBehaviour
 
         if (countdownTime >0)
         {
+            //Run Countdown
             countdownTime -= Time.deltaTime;
 
+            //Display Countdown Text
             string countdownSeconds = (countdownTime % 60).ToString("f0");
-
             countdownText.text = countdownSeconds;
+
+            //Play Countdown Sounds
+            if (countdownTime <3 &&  countdownTime >2 && !countdownSound1Played)
+            {
+                myAudioSource.clip = audioClip[0];
+                myAudioSource.Play();
+                countdownSound1Played = true;
+            }
+            if (countdownTime < 2 && countdownTime > 1 && !countdownSound2Played)
+            {
+                myAudioSource.clip = audioClip[0];
+                myAudioSource.Play();
+                countdownSound2Played = true;
+            }
+            if (countdownTime < 1 && countdownTime > 0 && !countdownSound3Played)
+            {      
+                myAudioSource.clip = audioClip[0];
+                myAudioSource.Play();
+                countdownSound3Played = true;
+            }
         }
 
         if (countdownTime < 0)
         {
+            myAudioSource.clip = audioClip[2];
+            myAudioSource.Play();
             StartRace();
         }
     }
@@ -281,6 +311,12 @@ public class RaceManagerScript : MonoBehaviour
     public void ReturnToMenu()
     {
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public void playMenuClickSound()
+    {
+        myAudioSource.clip = audioClip[1];
+        myAudioSource.Play();
     }
     #endregion
 }

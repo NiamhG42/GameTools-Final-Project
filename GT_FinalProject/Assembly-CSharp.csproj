@@ -62,9 +62,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\CaveManager.cs" />
     <Compile Include="Assets\Fractal\Fractal.cs" />
     <Compile Include="Assets\Scripts\BuildingProfile.cs" />
+    <Compile Include="Assets\Scripts\CaveManager.cs" />
     <Compile Include="Assets\Scripts\CityManager.cs" />
     <Compile Include="Assets\Scripts\DeluxeTowerBlock.cs" />
     <Compile Include="Assets\Scripts\DestroyFallen.cs" />

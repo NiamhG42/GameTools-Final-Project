@@ -9,6 +9,7 @@ TagManager:
   - Teleporter1
   - Teleporter2
   - Bouncy
+  - Crystal
   layers:
   - Default
   - TransparentFX

@@ -16,6 +16,7 @@ public class MenuControllerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         firstPlaceScore = PlayerPrefs.GetFloat("FirstPlaceScore", 0);
         secondPlaceScore = PlayerPrefs.GetFloat("SecondPlaceScore", 0);
         thirdPlaceScore = PlayerPrefs.GetFloat("ThirdPlaceScore", 0);
