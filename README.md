@@ -112,3 +112,5 @@ Final Project (and supporting documentation) for Game Tools 2020
 * Fixed issue with some building parts turning invisible when they weren't supposed to.
 
 * Added Sound Effects
+
+* Correct Finish Line models implemented

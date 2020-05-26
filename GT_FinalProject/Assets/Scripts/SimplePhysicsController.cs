@@ -17,6 +17,9 @@ public class SimplePhysicsController : MonoBehaviour
     public float rollResetSpeed = 400f;
 
     public Vector3 verticalForceDirection, elevationForceDirection;
+
+    public AudioSource normalSpeedAudioSource, fastAudioSource;
+    private bool soundPlaying, soundStarted;
     #endregion
 
     #region UnityMethods
@@ -57,9 +60,11 @@ public class SimplePhysicsController : MonoBehaviour
             if (Input.GetKey("space")){    
                 speed = 10.0f;
             }
-            else {speed = 5.0f; }
+            else {
+                speed = 5.0f;                
+            }
 
-
+            PlaySounds();
 
             //the code below stabilises the vehicle roll after a collision
             // if ((vInput==0f)&&(hInput == 0f)&&(eInput == 0f))
@@ -80,6 +85,62 @@ public class SimplePhysicsController : MonoBehaviour
            
 
         }
+    }
+
+    void PlaySounds()
+    {
+        //If any of the keys are down, should be playing sounds
+        if ((Input.GetKeyDown("w") || Input.GetKeyDown("s")
+            || Input.GetKeyDown("a") || Input.GetKeyDown("d")
+            || Input.GetKeyDown("r") || Input.GetKeyDown("f")
+            ) && !soundPlaying)
+        {     
+            soundPlaying = true;
+        }
+
+        //If no move keys are down, should NOT be playing sounds
+        if (!Input.GetKey("w") && !Input.GetKey("s")
+            && !Input.GetKey("a") && !Input.GetKey("d")
+            && !Input.GetKey("r") && !Input.GetKey("f")
+            && soundPlaying)
+        {
+            soundPlaying = false;
+        }
+
+        //Check what sound should be playing and start playing it
+        if (soundPlaying && !soundStarted)
+        {
+            if (speed == 10f)
+            {
+                normalSpeedAudioSource.Stop();
+                fastAudioSource.Play();
+            }
+            else
+            {
+                fastAudioSource.Stop();
+                normalSpeedAudioSource.Play();
+            }
+            soundStarted = true;
+        }
+
+        //Stop playing sounds
+        if (!soundPlaying)
+        {
+            fastAudioSource.Stop();
+            normalSpeedAudioSource.Stop();
+            soundStarted = false;
+        }
+
+        //If starting or stopping going fast, recheck what sounds to play
+        if (Input.GetKeyDown("space"))
+        {
+            soundStarted = false;
+        }
+        if (Input.GetKeyUp("space"))
+        {
+            soundStarted = false;
+        }
+
     }
     #endregion
 }
