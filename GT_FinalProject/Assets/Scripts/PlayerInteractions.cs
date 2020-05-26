@@ -10,12 +10,14 @@ public class PlayerInteractions : MonoBehaviour
     public AudioSource myAudioSource;
     public AudioClip [] audioClip;
     private int pointBoosterSoundControl;
+    private bool doneLap;
     #endregion
 
     #region UnityMethods
     // Start is called before the first frame update
     void Start()
     {
+        doneLap = false;
         pointBoosterSoundControl = 0;
         rb = GetComponent<Rigidbody>();
         raceManager = GameObject.Find("RaceManager");
@@ -47,8 +49,8 @@ public class PlayerInteractions : MonoBehaviour
             other.gameObject.SetActive(false);
         }
 
-        //If you run into a LapCounter, increase Lap Count
-        if (other.tag == "LapCounter")
+        //If you run into a LapCounter and have done a lap, increase Lap Count
+        if (other.tag == "LapCounter" && doneLap)
         {
             raceManager.GetComponent<RaceManagerScript>().UpdateLapCount();
             raceManager.GetComponent<RaceManagerScript>().NewLap();
@@ -64,6 +66,8 @@ public class PlayerInteractions : MonoBehaviour
                 myAudioSource.clip = audioClip[8];
                 myAudioSource.Play();
             }
+
+            doneLap = false;
         }
 
         if (other.tag == "Teleporter1")
@@ -86,6 +90,8 @@ public class PlayerInteractions : MonoBehaviour
             caveGroup.gameObject.SetActive(false);
             transform.position = teleportTarget2.transform.position;
             transform.rotation = teleportTarget2.transform.rotation;
+
+            doneLap = true;
         }
     }
 

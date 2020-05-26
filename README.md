@@ -116,3 +116,7 @@ Final Project (and supporting documentation) for Game Tools 2020
 * Correct Finish Line models implemented
 
 * Final version of teleporter/portal animations drawn and implemented
+
+* Implemented menu background art
+
+* Fixed exploit so the player has to actually do a lap for it to be counted
