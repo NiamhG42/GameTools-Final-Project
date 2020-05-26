@@ -286,7 +286,6 @@ public class RaceManagerScript : MonoBehaviour
         }
         if (currentLap > 3)
         {
-            Debug.Log("Finish Text Working");
             lapAnnouncerText.text = "Finish!";
         }
     }

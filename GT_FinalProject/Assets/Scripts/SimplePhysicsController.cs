@@ -85,6 +85,12 @@ public class SimplePhysicsController : MonoBehaviour
            
 
         }
+
+        if (!raceManager.GetComponent<RaceManagerScript>().isRacing)
+        {
+            fastAudioSource.Stop();
+            normalSpeedAudioSource.Stop();
+        }
     }
 
     void PlaySounds()

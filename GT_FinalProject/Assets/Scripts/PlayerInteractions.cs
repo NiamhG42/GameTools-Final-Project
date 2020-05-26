@@ -59,6 +59,11 @@ public class PlayerInteractions : MonoBehaviour
                 myAudioSource.clip = audioClip[7];
                 myAudioSource.Play();
             }
+            else
+            {
+                myAudioSource.clip = audioClip[8];
+                myAudioSource.Play();
+            }
         }
 
         if (other.tag == "Teleporter1")
