@@ -114,3 +114,5 @@ Final Project (and supporting documentation) for Game Tools 2020
 * Added Sound Effects
 
 * Correct Finish Line models implemented
+
+* Final version of teleporter/portal animations drawn and implemented
