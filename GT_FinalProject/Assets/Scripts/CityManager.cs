@@ -61,6 +61,7 @@ namespace GRIDCITY
 		// Use this for external initialization
 		void Start ()
         {
+            
             SetPathSlots();
             MakeOuterTerrain();
 
@@ -92,23 +93,7 @@ namespace GRIDCITY
             for (int x =15; x<23; x++)
             {
                 SetRoadSlot(x, 0, 13, false);
-            }
-      
-
-
-            /*
-                //BUILD CITY WALLS - add your code below
-
-                for (int j = -6; j <= 6; j += 12)
-                {
-                    for (int i = -6; i <= 6; i++)
-                    {
-                        Instantiate(buildingPrefab, new Vector3(i, 0.05f, j), Quaternion.identity).GetComponent<DeluxeTowerBlock>().SetProfile(wallProfile);
-                        if (j == -6 && i == 6 || j == -6 && i == -6 || j == 6 && i == 6 || j == 6 && i == -6) {}
-                        else { Instantiate(buildingPrefab, new Vector3(j, 0.05f, i), Quaternion.identity).GetComponent<DeluxeTowerBlock>().SetProfile(wallProfile); }
-                    }
-                }
-     */
+            }      
 
             //CITY ROADS
             for (int i = -7; i < 18; i += 1)
@@ -119,6 +104,8 @@ namespace GRIDCITY
                     Instantiate(roadTile, new Vector3(i, 0.05f, j), Quaternion.identity);
                 }
             }
+            
+
 
             //CITY BUILDINGS:
 

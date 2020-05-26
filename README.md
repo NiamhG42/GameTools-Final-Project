@@ -106,3 +106,7 @@ Final Project (and supporting documentation) for Game Tools 2020
 * Simple version of bouncy mushrooms implemented (physics working)
 
 * Modelled mushrooms and imported. Implemented finished version of bouncy mushrooms.
+
+* Placed all mushrooms where they should be.
+
+* Fixed issue with some building parts turning invisible when they weren't supposed to.

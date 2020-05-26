@@ -23,7 +23,7 @@ namespace GRIDCITY
             }
             else
             {
-                //Road Tile is Places
+                //Road Tile is Placed            
             }
         }
     }

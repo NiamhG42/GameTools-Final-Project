@@ -133,26 +133,36 @@ namespace GRIDCITY
                 }
             }
 
+            
             //If the block is surrounded on all sides, turn off the Renderer
             if ((cityManager.CheckBuildingSlot(x, y + 1, z) && cityManager.CheckBuildingSlot(x, y - 1 , z)
                 && cityManager.CheckBuildingSlot(x + 1, y, z) && cityManager.CheckBuildingSlot(x + 1, y, z)
                 && cityManager.CheckBuildingSlot(x, y, z + 1) && cityManager.CheckBuildingSlot(x, y, z - 1)))
             {
                 //if the building is beside the road, don't turn off Renderer
-                if (!(cityManager.CheckRoadSlot(x, y + 1, z) && cityManager.CheckRoadSlot(x, y - 1, z)
-                && cityManager.CheckRoadSlot(x + 1, y, z) && cityManager.CheckRoadSlot(x + 1, y, z)
-                && cityManager.CheckRoadSlot(x, y, z + 1) && cityManager.CheckRoadSlot(x, y, z - 1)))
+                if (!(cityManager.CheckRoadSlot(x + 1, 1, z) || cityManager.CheckRoadSlot(x + 1, 1, z)
+                || cityManager.CheckRoadSlot(x, 1, z + 1) || cityManager.CheckRoadSlot(x, 1, z - 1)))
                 {              
                     if (x != 0 && y != 1 && z != 0)
                     {
-                        myRenderer.enabled = false;
+                            myRenderer.enabled = false;
+
                     }
                 }
             }
-        }
+            //Fix random invisble walls
+            if ( x == 17 || x == 22 ||x == 23)
+            {
+                myRenderer.enabled = true;
+            }
+           
+            
 
-        // Update is called once per frame
-        void Update()
+
+            }
+
+            // Update is called once per frame
+            void Update()
         {
             if (transform.position.y < -5f)
             {
