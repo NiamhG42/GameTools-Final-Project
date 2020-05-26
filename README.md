@@ -120,3 +120,5 @@ Final Project (and supporting documentation) for Game Tools 2020
 * Implemented menu background art
 
 * Fixed exploit so the player has to actually do a lap for it to be counted
+
+* Attributed sounds in text file. [See here](SoundCredits.txt)
