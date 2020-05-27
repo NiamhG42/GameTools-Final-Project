@@ -39,9 +39,9 @@ public class RaceManagerScript : MonoBehaviour
     {
         myAudioSource = GetComponent<AudioSource>();
 
-        highScores[0] = PlayerPrefs.GetFloat("FirstPlaceScore", 0);
-        highScores[1] = PlayerPrefs.GetFloat("SecondPlaceScore", 0);
-        highScores[2] =PlayerPrefs.GetFloat("ThirdPlaceScore", 0);
+        highScores[0] = PlayerPrefs.GetFloat("FirstPlaceScore", 66.129f);
+        highScores[1] = PlayerPrefs.GetFloat("SecondPlaceScore", 100.32f);
+        highScores[2] =PlayerPrefs.GetFloat("ThirdPlaceScore", 110.34f);
 
         currentTime = 0;
         countdownTime = 3.5f;
@@ -125,6 +125,7 @@ public class RaceManagerScript : MonoBehaviour
             }
         }
 
+        //When the countdown finishes...
         if (countdownTime < 0)
         {
             myAudioSource.clip = audioClip[2];
@@ -295,6 +296,7 @@ public class RaceManagerScript : MonoBehaviour
         lapAnnounceTime = 1.5f;
         lapAnnouncerText.gameObject.SetActive(true);
 
+        //Activate all the deactivated PointBoosters
         for (int i = 0; i < pointsBoosterList.Count; i++)
         {        
             pointsBoosterList[i].gameObject.SetActive(true);

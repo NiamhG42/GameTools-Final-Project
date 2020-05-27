@@ -17,9 +17,9 @@ public class MenuControllerScript : MonoBehaviour
     void Start()
     {
 
-        firstPlaceScore = PlayerPrefs.GetFloat("FirstPlaceScore", 0);
-        secondPlaceScore = PlayerPrefs.GetFloat("SecondPlaceScore", 0);
-        thirdPlaceScore = PlayerPrefs.GetFloat("ThirdPlaceScore", 0);
+        firstPlaceScore = PlayerPrefs.GetFloat("FirstPlaceScore", 66.129f);
+        secondPlaceScore = PlayerPrefs.GetFloat("SecondPlaceScore", 100.32f);
+        thirdPlaceScore = PlayerPrefs.GetFloat("ThirdPlaceScore", 110.34f);
 
         string minutes = ((int)firstPlaceScore / 60).ToString();
         string seconds = (firstPlaceScore % 60).ToString("f2");
