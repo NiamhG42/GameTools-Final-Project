@@ -2,7 +2,7 @@
 Final Project (and supporting documentation) for Game Tools 2020
 
 ## Demo Video
-https://youtu.be/SLuxqeySK0g(https://youtu.be/SLuxqeySK0g)
+(https://youtu.be/SLuxqeySK0g)
 
 
 ### Sources
