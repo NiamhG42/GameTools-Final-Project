@@ -3,7 +3,7 @@ Final Project (and supporting documentation) for Game Tools 2020
 
 [Sources for sound effects used in this project](SoundCredits.md)
 
-<a href="https://www.freepik.com/free-photos-vectors/background">Background vector created by rawpixel.com - www.freepik.com</a>
+<a href="https://www.freepik.com/free-photos-vectors/background">Crystals Texture created by rawpixel.com - www.freepik.com</a>
 
 ### Log
 
@@ -125,4 +125,8 @@ Final Project (and supporting documentation) for Game Tools 2020
 
 * Fixed exploit so the player has to actually do a lap for it to be counted
 
-* Attributed sounds in text file. [See here](SoundCredits.md)
+* Attributed sounds. [See here](SoundCredits.md)
+
+* Implemented lighting
+
+* Placed player "car" in correct starting position

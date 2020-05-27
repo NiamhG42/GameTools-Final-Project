@@ -109,7 +109,7 @@ namespace GRIDCITY
 
                         }
 
-                        child = Instantiate(basePrefab, transform.position + Vector3.up*1.05f, roofRotation, this.transform);
+                        child = Instantiate(basePrefab, transform.position + Vector3.up*1f, roofRotation, this.transform);
                         int meshNum = myProfile.roofBlocks.Length;
                         int matNum = myProfile.roofMaterials.Length;
                         child.GetComponent<DeluxeTowerBlock>().Initialize(recursionLevel + 1, myProfile.roofMaterials[Random.Range(0, matNum)], myProfile.roofBlocks[Random.Range(0, meshNum)]);
@@ -122,7 +122,7 @@ namespace GRIDCITY
                 {
                     if (!cityManager.CheckSlot(x, y + 1, z))
                     {
-                        child = Instantiate(basePrefab, transform.position + Vector3.up * 1.05f, Quaternion.identity, this.transform);
+                        child = Instantiate(basePrefab, transform.position + Vector3.up * 1f, Quaternion.identity, this.transform);
                         int meshNum = myProfile.mainBlocks.Length;
                         int matNum = myProfile.mainMaterials.Length;
                         child.GetComponent<DeluxeTowerBlock>().Initialize(recursionLevel + 1, myProfile.mainMaterials[Random.Range(0, matNum)], myProfile.mainBlocks[Random.Range(0, meshNum)]);

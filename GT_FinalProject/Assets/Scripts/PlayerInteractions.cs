@@ -17,6 +17,7 @@ public class PlayerInteractions : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        myAudioSource.volume = 1f;
         doneLap = false;
         pointBoosterSoundControl = 0;
         rb = GetComponent<Rigidbody>();
@@ -31,6 +32,8 @@ public class PlayerInteractions : MonoBehaviour
         if (other.tag == "PointsBooster")
         {
             //Play Audio
+            myAudioSource.volume = 0.3f;
+
             if (pointBoosterSoundControl == 0)
             {
                 myAudioSource.clip = audioClip[4];
@@ -52,6 +55,8 @@ public class PlayerInteractions : MonoBehaviour
         //If you run into a LapCounter and have done a lap, increase Lap Count
         if (other.tag == "LapCounter" && doneLap)
         {
+            myAudioSource.volume = 1f;
+
             raceManager.GetComponent<RaceManagerScript>().UpdateLapCount();
             raceManager.GetComponent<RaceManagerScript>().NewLap();
 
@@ -73,6 +78,7 @@ public class PlayerInteractions : MonoBehaviour
         if (other.tag == "Teleporter1")
         {
             //Play Audio
+            myAudioSource.volume = 1f;
             myAudioSource.clip = audioClip[3];
             myAudioSource.Play();
 
@@ -84,6 +90,7 @@ public class PlayerInteractions : MonoBehaviour
         if (other.tag == "Teleporter2")
         {
             //Play Audio
+            myAudioSource.volume = 1f;
             myAudioSource.clip = audioClip[3];
             myAudioSource.Play();
 
@@ -101,6 +108,7 @@ public class PlayerInteractions : MonoBehaviour
         if(collision.gameObject.tag == "Bouncy")
         {
             //Play Audio
+            myAudioSource.volume = 1f;
             myAudioSource.clip = audioClip[6];
             myAudioSource.Play();
 
@@ -115,6 +123,7 @@ public class PlayerInteractions : MonoBehaviour
         else if (collision.gameObject.name == "Dome")
         {
             //Play Audio
+            myAudioSource.volume = 1f;
             myAudioSource.clip = audioClip[1];
             myAudioSource.Play();
         }
@@ -122,6 +131,7 @@ public class PlayerInteractions : MonoBehaviour
         else if (collision.gameObject.tag == "Crystal")
         {
             //Play Audio
+            myAudioSource.volume = 1f;
             myAudioSource.clip = audioClip[2];
             myAudioSource.Play();
         }
@@ -129,6 +139,7 @@ public class PlayerInteractions : MonoBehaviour
         else
         {
             //Play Audio
+            myAudioSource.volume = 1f;
             myAudioSource.clip = audioClip[0];
             myAudioSource.Play();
         }

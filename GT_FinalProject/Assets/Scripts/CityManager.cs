@@ -114,7 +114,7 @@ namespace GRIDCITY
                 for (int j=-9;j<15;j+=1)
                 {
                     int random = Random.Range(0, profileArray.Length);
-                    Instantiate(buildingPrefab, new Vector3(i, 0.05f, j), Quaternion.identity).GetComponent<DeluxeTowerBlock>().SetProfile(profileArray[random]);                 
+                    Instantiate(buildingPrefab, new Vector3(i, 0f, j), Quaternion.identity).GetComponent<DeluxeTowerBlock>().SetProfile(profileArray[random]);                 
                 }
             }
 
