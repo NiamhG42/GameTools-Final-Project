@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerInteractions : MonoBehaviour
 {
     #region Fields
-    public GameObject raceManager, teleportTarget1, teleportTarget2, caveGroup;
+    public GameObject raceManager, teleportTarget1, teleportTarget2, caveGroup, particleBurst;
     private Rigidbody rb;
     public AudioSource myAudioSource;
     public AudioClip [] audioClip;
@@ -47,8 +47,15 @@ public class PlayerInteractions : MonoBehaviour
 
             myAudioSource.Play();
 
+            //Spawn a burst of particles
+            GameObject tempParticleEffect = Instantiate(particleBurst, transform.position, Quaternion.identity);
+            //Destroy particles after a moment
+            Destroy(tempParticleEffect, 0.7f);
 
-            raceManager.GetComponent<RaceManagerScript>().currentPoints++;            
+            //Increase points
+            raceManager.GetComponent<RaceManagerScript>().currentPoints++;   
+            
+            //Deactive this Pointbooster for now
             other.gameObject.SetActive(false);
         }
 

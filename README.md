@@ -1,6 +1,8 @@
 # GameTools-Final-Project
 Final Project (and supporting documentation) for Game Tools 2020
 
+### Sources
+
 [Sources for sound effects used in this project](SoundCredits.md)
 
 <a href="https://www.freepik.com/free-photos-vectors/background">Crystals Texture created by rawpixel.com - www.freepik.com</a>
@@ -130,3 +132,5 @@ Final Project (and supporting documentation) for Game Tools 2020
 * Implemented lighting
 
 * Placed player "car" in correct starting position
+
+* Particle effects added when driving through a "PointBooster"

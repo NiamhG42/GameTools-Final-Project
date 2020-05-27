@@ -36518,6 +36518,8 @@ MonoBehaviour:
   teleportTarget1: {fileID: 224400647}
   teleportTarget2: {fileID: 2105136417}
   caveGroup: {fileID: 455897814}
+  particleBurst: {fileID: 2844235047470429451, guid: a4c78a6d4f1bd0d4ab58665cd8c4dd1d,
+    type: 3}
   myAudioSource: {fileID: 5792642431938279783}
   audioClip:
   - {fileID: 8300000, guid: a720363c89f5a794c9182ac9d1eb83cc, type: 3}
