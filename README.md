@@ -4,8 +4,20 @@ Final Project (and supporting documentation) for Game Tools 2020
 ## Demo Video
 (https://youtu.be/SLuxqeySK0g)
 
+## Set-Up Notes
+Sometimes when unzipping, there may be a small error. If this happens:
 
-### Sources
+- The scenes need to be added to the build.
+  - Go to File > Build Settings > Scenes in Build.
+  - Add "MainMenu" and "MainScene" to Scenes in Build.
+
+- Input Axis Elevate needs to be setup. 
+  - Go to Edit > Project Settings > Input Manager.
+  - Set up an Input Axis called "Elevate".
+  - Set the Negative Button to "r".
+  - Set the Positive Button to "f".
+
+## Sources
 
 [Sources for sound effects used in this project](SoundCredits.md)
 
